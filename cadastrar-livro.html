@@ -15,29 +15,74 @@
 
 <body>
     <div class="container">
-        <h3>Cadastro de Livros</h3>
-        <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="titulo" name="titulo"  placeholder="inserir o titulo do livro">
-            <label for="titulo">Título</label>
-        </div>
-        <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="autor" name="autor"  placeholder="Inserir o autor do livro">
-            <label for="titulo">Autor</label>
-        </div>
+        <h3 class="text-center p-2 text-primary fw-bold">Cadastro de Livros</h3>
+        <form id="form-cadastrar">
+            <div class="row row-cols-1 row-cols-md-2 g-3">
 
-        <div class="form-floating">
-            <!-- o arial-label serve como uma descrição (lembra o alt da tag img)-->
-            <select class="form-select" id="categoria" name="categoria" aria-label="Selecione a categoria ">
-              <option selected disabled>Selecione...</option>
-              <option value="Drama">Drama</option>
-              <option value="Romance">Romance</option>
-              <option value="Suspense">Suspense</option>
-            </select>
-            <label for="floatingSelect">Categoria</label>
-          </div>
-        
+                <div class="col">
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="titulo" name="titulo"
+                            placeholder="inserir o titulo do livro">
+                        <label for="titulo">Título</label>
+                    </div>
+                </div>
 
+                <div class="col">
+                    <div class="form-floating mb-3">
+                        <input type="number" class="form-control" id="isbn" name="isbn"
+                            placeholder="inserir o isbn do livro">
+                        <label for="isbn">ISBN</label>
+                    </div>
+                </div>
 
+                <div class="col">
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="autor" name="autor"
+                            placeholder="Inserir o autor do livro">
+                        <label for="titulo">Autor</label>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="form-floating mb-3">
+                        <!-- o arial-label serve como uma descrição (lembra o alt da tag img)-->
+                        <select class="form-select" id="categoria" name="categoria" aria-label="Selecione a categoria ">
+                            <option selected disabled>Selecione...</option>
+                            <option value="Drama">Drama</option>
+                            <option value="Romance">Romance</option>
+                            <option value="Suspense">Suspense</option>
+                        </select>
+                        <label for="categoria">Categoria</label>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="form-floating mb-3">
+                        <select class="form-select" id="editora" name="editora" aria-label="Selecione a editora ">
+                            <option selected disabled>Selecione...</option>
+                            <option value="Senac">Senac</option>
+                            <option value="Abril">Abril</option>
+                            <option value="Record">Record</option>
+                            <option value="CIA das Letras">CIA das Letras</option>
+                            <option value="Darkside">Darkside</option>
+                        </select>
+                        <label for="editora">Editora</label>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="valor" name="valor"
+                            placeholder="inserir o valor do livro">
+                        <label for="valor">Valor</label>
+                    </div>
+                </div>
+
+            </div>
+
+            <button type="button" class="btn btn-primary mt-3">Cadastrar</button>
+
+        </form>
 
 
     </div>

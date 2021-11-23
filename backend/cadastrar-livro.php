@@ -11,7 +11,8 @@ try {
     $editora   = $_POST['editora'];
     $valor     = $_POST['valor'];
     
-    //Inclui o arquivo de conexão com os Bancos de Dados 
+    //Inclui o arquivo de conexão com os Bancos de Dados
+    include 'conexão.php'; 
 
 
     

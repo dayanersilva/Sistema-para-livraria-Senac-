@@ -12,7 +12,7 @@ try {
     $valor     = $_POST['valor'];
     
     //Inclui o arquivo de conexão com os Bancos de Dados
-    include 'conexão.php'; 
+    include 'conexao.php'; 
 
 
     

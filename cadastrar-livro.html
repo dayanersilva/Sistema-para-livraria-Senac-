@@ -16,7 +16,7 @@
 <body>
     <div class="container">
         <h3 class="text-center p-2 text-primary fw-bold">Cadastro de Livros</h3>
-        <form id="form-cadastrar" class="needs-validation">
+        <form id="form-cadastrar">
             <div class="row row-cols-1 row-cols-md-2 g-3">
 
                 <div class="col">
@@ -39,7 +39,7 @@
                     <div class="form-floating">
                         <input type="text" class="form-control" id="autor" name="autor"
                             placeholder="Inserir o autor do livro">
-                        <label for="titulo">Autor</label>
+                        <label for="autor">Autor</label>
                     </div>
                 </div>
 
@@ -47,7 +47,7 @@
                     <div class="form-floating">
                         <!-- o arial-label serve como uma descrição (lembra o alt da tag img)-->
                         <select class="form-select" id="categoria" name="categoria" aria-label="Selecione a categoria ">
-                            <option selected disabled>Selecione...</option>
+                            <option selected disabled value="Selecione...">Selecione...</option>
                             <option value="Drama">Drama</option>
                             <option value="Romance">Romance</option>
                             <option value="Suspense">Suspense</option>
@@ -59,7 +59,7 @@
                 <div class="col">
                     <div class="form-floating">
                         <select class="form-select" id="editora" name="editora" aria-label="Selecione a editora ">
-                            <option selected disabled>Selecione...</option>
+                            <option selected disabled value="Selecione...">Selecione...</option>
                             <option value="Senac">Senac</option>
                             <option value="Abril">Abril</option>
                             <option value="Record">Record</option>

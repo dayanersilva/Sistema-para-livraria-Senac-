@@ -61,7 +61,3 @@ try {
     echo $json;
 
 }
-
-
-
-?>

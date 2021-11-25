@@ -18,6 +18,3 @@
         echo 'Erro ao conectar no banco de dados: ' .$erro->getMessage();
         exit();
     }
-
-?>
-

@@ -1,64 +1,64 @@
 //Função que valida e captura os dados do formulário de cadastro de livros e envia para o backend PHP
-const cadastrar = () =>{
-   // validação dos campos usando JS
+const cadastrar = () => {
+  // validação dos campos usando JS
 
-   //campo nome
-   //captura o valor preenchido no INPUT titulo
-   let titulo =$('#titulo').val();
-   let isbn = $('#isbn').val();
-   let autor = $('#autor').val();
-   let categoria = $('#categoria').val();
-   let editora = $('#editora').val();
-   let valor = $('#valor').val();
+  //campo nome
+  //captura o valor preenchido no INPUT titulo
+  let titulo = $('#titulo').val();
+  let isbn = $('#isbn').val();
+  let autor = $('#autor').val();
+  let categoria = $('#categoria').val();
+  let editora = $('#editora').val();
+  let valor = $('#valor').val();
 
 
-   if(titulo ==''){
-       $('#titulo').addClass('is-invalid');
-       return
-   }else{
+  if (titulo == '') {
+    $('#titulo').addClass('is-invalid');
+    return
+  } else {
     $('#titulo').removeClass('is-invalid')
     $('#titulo').addClass('is-valid')
-   }
+  }
 
-   if(isbn ==''){
-     $('#isbn').addClass('is-invalid');
-     return
-   }else{
+  if (isbn == '') {
+    $('#isbn').addClass('is-invalid');
+    return
+  } else {
     $('#isbn').removeClass('is-invalid')
     $('#isbn').addClass('is-valid')
-   }
+  }
 
-   if(autor ==''){
-     $('#autor').addClass('is-invalid');
-     return
-   }else{
+  if (autor == '') {
+    $('#autor').addClass('is-invalid');
+    return
+  } else {
     $('#autor').removeClass('is-invalid')
     $('#autor').addClass('is-valid')
-   }
+  }
 
-   if(categoria == null){
-     $('#categoria').addClass('is-invalid');
-     return
-   }else{
+  if (categoria == null) {
+    $('#categoria').addClass('is-invalid');
+    return
+  } else {
     $('#categoria').removeClass('is-invalid')
     $('#categoria').addClass('is-valid')
-   }
+  }
 
-   if(editora == null){
+  if (editora == null) {
     $('#editora').addClass('is-invalid');
     return
-  }else{
+  } else {
     $('#editora').removeClass('is-invalid')
     $('#editora').addClass('is-valid')
-   }
+  }
 
-  if(valor == ''){
+  if (valor == '') {
     $('#valor').addClass('is-invalid');
     return
-  }else{
+  } else {
     $('#valor').removeClass('is-invalid')
     $('#valor').addClass('is-valid')
-   }
+  }
 
   console.log(`titulo:${titulo}, ISBN:${isbn}, Autor:${autor}, Categoria:${categoria}, Editora:${editora}, Valor:${valor}`)
 
@@ -67,12 +67,40 @@ const cadastrar = () =>{
   //Inicio de envio de dados para o PHP
   //Serializar os dados do formulário para envio
   // a variavel form, irá receber as chaves e valores preenchidos no form cadastrar
-  let form =  new FormData($('#form-cadastrar')[0])
+  let form = new FormData($('#form-cadastrar')[0])
 
   //envios dos dados utiliando o FETCH
-  fetch('backend/cadastrar-livro.php',{
-    method: 'POST',
-    body: form 
-  })
+  fetch('backend/cadastrar-livro.php', {
+      method: 'POST',
+      body: form
+    })
+    //then tratamento de sucesso da resposta
+    .then(function (response) {
+      response.json().then(dados => {
+        //os dados recebidos do PHP são armazenados dentro da var dados
+        //aqui é onde iremos manipular os elementos do HTML depois do sucesso da requisição ao backend
+        //aqui é tratado o retorno
+        if (dados.retorno == 'Sucesso') {
+          //exibe o alerta do SweetAlert2
+          Swal.fire({
+            icon: 'success',
+            title: dados.retorno,
+            text: dados.mensagem
+          })
+          // limpa os dados dos formulario 
+          $('#form-cadastrar')[0].reset()
+        } else {
+          Swal.fire({
+            icon: 'error',
+            title: dados.retorno,
+            text: dados.mensagem
+          })
+        }
+
+      })
+
+    })
+
+
 
 }

@@ -20,7 +20,11 @@ const listar = () => {
             //limpa as linhas da tabela , antes de montar o novo resultado
             $('#tabela-dinamica').html('')
 
-            //estrutura de laço(loop) que verifica a quantidade de linhas no array DADOS e mapeia para montar as linhas da tabela  
+             //alert(dados.length)
+
+            //estrutura de laço(loop) que verifica a quantidade de linhas no array DADOS e mapeia para montar as linhas da tabela 
+            //verifica se existem resgistros dentro da variavel dados, caso existir monta as linhas das tabela, caso for 0 o tamanho nao tenho livros cadastrados exibe a mensagem do else
+            if(dados.length !=0){ 
             dados.map((livro) => {
                 $('#tabela-dinamica').append(`
                 <tr>
@@ -34,11 +38,17 @@ const listar = () => {
             </tr>
                `)
             })
-
+        }else{
+            $('#tabela-dinamica').append(`
+            <tr>
+            <td colspan="7">Nenhum livro encontrado</td>
+            </tr>
+            `)
+        }
           
-        })
-    })
+        })//fecha o response
+    })//fecha o then
 
 
 
-}
+}//finaliza a função cadastrar

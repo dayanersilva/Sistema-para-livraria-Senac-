@@ -58,7 +58,14 @@ const listar = () => {
                 'excelHtml5',
                 'csvHtml5',
                 'pdfHtml5',
-                'print'
+                {
+                    extend: 'print',
+                    exportOptions: {
+                        columns: ':visible'
+                    }
+                },
+                'colvis'
+              
             ]
         }) 
 

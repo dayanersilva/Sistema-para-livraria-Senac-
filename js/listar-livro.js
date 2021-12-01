@@ -45,7 +45,23 @@ const listar = () => {
             </tr>
             `)
         }
-          
+
+        //Inicializar a Datatable ( a tabela sera trasformada em datatable aqui)
+        $('#tabela-livros').DataTable({
+            "language":{
+                "url": "json/datatable_pt-br.json"
+            },
+            dom: 'Bfrtip',
+            retrieve: true,
+            buttons: [
+                'copyHtml5',
+                'excelHtml5',
+                'csvHtml5',
+                'pdfHtml5',
+                'print'
+            ]
+        }) 
+
         })//fecha o response
     })//fecha o then
 

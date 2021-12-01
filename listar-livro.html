@@ -13,6 +13,13 @@
     <!--CSS FONTAWESOME-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
 
+
+    <!--CSS base datatable bootstrap5-->
+    <link rel="stylesheet" href="css/datatable/dataTables.bootstrap5.min.css">
+
+    <!--Css dos botoes da datatable em bootstrap5-->
+    <link rel="stylesheet" href="css/datatable/buttons.bootstrap5.min.css">
+
     <title>Gerenciamento de Livros!</title>
 </head>
 
@@ -20,7 +27,7 @@
     <div class="container">
         <h2 class="p-2 text-center">Lista de Livros Cadastrados</h2>
         <button type="button" class="btn btn-success m-3 mb-3" onclick="listar()"><i class="fas fa-redo-alt"></i>Atualizar</button>
-        <table class="table table-hover">
+        <table class="table table-hover" id="tabela-livros">
             <thead class="table-dark">
                 <tr>
                     <th scope="col">ID</th>
@@ -37,10 +44,6 @@
             </tbody>
         </table>
 
-
-
-
-
     </div>
 
 
@@ -55,6 +58,33 @@
 
     <!--Importação JQUERY-->
     <script src="js/jquery-3.6.0.min.js"></script>
+
+    <!--Datatable importacçao Jquery-->
+    <script src="js/datatable/jquery.dataTables.min.js"></script>
+
+    <!-- datatable JS tema bootstrap-->
+    <script src="js/datatable/dataTables.bootstrap5.min.js"></script>
+
+    <!--datatable botoes-->
+    <script src="js/datatable/dataTables.buttons.min.js"></script>
+
+    <!--datatable-botoes bootstrap-->
+    <script src="js/datatable/buttons.bootstrap5.min.js"></script>
+
+    <!--datatable PDFMAKE-->
+    <script src="js/datatable/pdfmake.min.js"></script>
+
+    <!--datatable JSZIP-->
+    <script src="js/datatable/jszip.min.js"></script>
+
+    <!--datatable buttons HTML5 -->
+    <script src="js/datatable/buttons.html5.min.js"></script>
+
+    <!--datatable VFS fonts-->
+    <script src="js/datatable/vfs_fonts.js"></script>
+
+    <!--datatable impressao-->
+    <script src="js/datatable/buttons.print.min.js"></script>
     
     <!--Importação do script da página -->
     <script src="js/listar-livro.js"></script>

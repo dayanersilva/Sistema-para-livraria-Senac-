@@ -88,7 +88,23 @@ const deletar = (id) => {
     }).then(function (response) {
         response.json().then(dados => {
             //aqui é tratado o retorno do backend(montagem do Front)
+            if(dados.retorno == 'Sucesso'){
+                Swal.fire({
+                    icon: 'success',
+                    title: dados.retorno,
+                    text: dados.mensagem
+                  })
 
+                listar()
+            }else{
+                Swal.fire({
+                    icon: 'error',
+                    title: dados.retorno,
+                    text: dados.mensagem
+                  })
+                 // recarrega a tabela 
+                listar()  
+            }
         })//fecha o then do json
     })//fecha o then do response 
 }//fecha a função

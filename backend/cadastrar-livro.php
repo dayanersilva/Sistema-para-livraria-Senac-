@@ -10,6 +10,11 @@ try {
     $categoria = $_POST['categoria'];
     $editora   = $_POST['editora'];
     $valor     = $_POST['valor'];
+    $imagem    =$_FILES['imagem']['name'];
+
+
+    //upload da imagem para a pasta img/uploads
+    move_uploaded_file($_FILES['imagem']['tmp_name'],'../img/uploads/'.$imagem);
     
     //Inclui o arquivo de conexão com os Bancos de Dados
     include 'conexao.php'; 
